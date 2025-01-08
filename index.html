@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M18.5</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6;}
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select {font-size: 1em; padding: 5px;}
+        .activity { margin-bottom: 20px; }
+         .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+         span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const activity3Step6 = document.getElementById('activity-3-step-6');
+
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+                 if(activity3Step6) activity3Step6.style.display = 'block';
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                if(activity3Step6) activity3Step6.style.display = 'none';
+            } else {
+                activity2.style.display = 'block';
+                 if(activity3Step6) activity3Step6.style.display = 'block';
+            }
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P4-M18.5</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+         <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+         <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                            <strong>Paso 1:</strong> Proyectar Diapositiva 1 y verificar que estén disponibles los materiales y recursos necesarios para la misión:
+                            <ul>
+                                 <li>2 Cutebots con sensores ultrasónicos y baterías cargadas.</li>
+                                <li>Computadoras o tabletas con software de programación instalado.</li>
+                                <li>Materiales para construir laberintos (regletas, cartón, cinta adhesiva, cajas pequeñas, etc.).</li>
+                                <li>Obstáculos móviles.</li>
+                                 <li>Magic Boards.</li>
+                            </ul>
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">No aplica</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 2 con el tema del día: Retos de Navegación Avanzados con Obstáculos Móviles.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Hola, Genios! 🌟 Hoy nos enfrentaremos a retos de navegación como nunca antes. Programaremos nuestros Cutebots para que tomen decisiones inteligentes, esquivando obstáculos en movimiento. ¡Prepárense para un día lleno de creatividad, innovación y mucha acción! 🚀"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 3 "¿Cómo estás hoy?" con las nuevas poses relacionadas con la navegación y la robótica.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Genios! Díganme cómo están hoy: - Si están súper emocionados y listos para navegar en laberintos dinámicos, activen el Modo Detección, moviendo los brazos como si estuvieran escaneando el entorno, y diciendo '¡Escaneo activo!' 📡. - Si necesitan un poco más de concentración para la planificación, entren en Modo Planeación, poniendo las manos en las sienes como si estuvieran pensando en diferentes rutas. 🧭 ¡Vamos a calibrar nuestra mente antes de empezar la misión!"""</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 4 "Ritual de Agradecimiento" y guiar a los estudiantes en el ritual temático.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""Juntamos nuestras manos y decimos: '¡Gracias por estar aquí, Genios! Hoy vamos a programar a nuestros Cutebots para superar desafíos en laberintos dinámicos. ¡Será un día lleno de trabajo en equipo y creatividad en movimiento!' 🌟💡"""</td>
+                     </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar Diapositiva 5 "Objetivos de la Misión".</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Atención, Genios! Aquí están los objetivos de nuestra misión de hoy: <br> <strong>1.</strong> Programar el sensor ultrasónico para detectar obstáculos fijos y móviles. <br> <strong>2.</strong> Diseñar algoritmos que permitan a los Cutebots tomar decisiones sobre la dirección a seguir. <br> <strong>3.</strong> Crear trayectorias complejas en laberintos dinámicos, incluyendo la detección y evitación de obstáculos. ¡Prepárense para una aventura de navegación autónoma sin igual!"""</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="3">
+            <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 3 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Ejercicio para simular la navegación con obstáculos en movimiento.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar Diapositiva 6: Explicar que realizarán un ejercicio para simular la navegación con obstáculos en movimiento.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Genios de la navegación, vamos a activar nuestros cerebros para dominar los laberintos dinámicos! Hoy haremos un ejercicio que simulará cómo nuestros Cutebots tomarán decisiones mientras se mueven y esquivan obstáculos. ¡Prepárense para navegar con la mente y el cuerpo!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 7: Mostrar las instrucciones para el ejercicio ""Esquiva el Obstáculo"".</td>
+                       <td style="padding: 10px; vertical-align: top;">"""¡Vamos a ponernos en movimiento, navegantes! Sigan mis instrucciones: 1. Imaginen que son un Cutebot navegando por un laberinto. 2. Cuando yo diga ‘obstáculo a la derecha’, salten hacia la izquierda y viceversa. 3. Cuando diga ‘obstáculo al frente’, den un paso hacia atrás rápidamente. ¡Este ejercicio activará nuestra respuesta ante los cambios de dirección y obstáculos imprevistos!"""</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 8 y guiar una breve discusión sobre cómo el ejercicio se relaciona con la programación de Cutebots.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Excelente trabajo, Genios navegadores! Ahora piensen: ¿Cómo creen que este ejercicio mejora nuestra capacidad de reaccionar ante obstáculos en movimiento? ¿Qué habilidades de toma de decisiones activamos al seguir las instrucciones de dirección? Recuerden, la precisión y la respuesta rápida son clave para la navegación autónoma de nuestros Cutebots. ¡La práctica nos hará más hábiles!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="27">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 27 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Retos de navegación autónoma en laberintos con obstáculos móviles.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar Diapositiva 9 "Retos de Navegación Dinámica". Explicar el objetivo general del reto y los niveles de dificultad.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Genios de la navegación, el momento ha llegado! 🚀 Hoy vamos a programar a nuestros Cutebots para que superen laberintos dinámicos con obstáculos móviles. Tendremos tres niveles de desafío: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>, diseñados para poner a prueba sus habilidades en la programación y la toma de decisiones. ¡Elijan su reto y que comience la acción!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 10 "Preparación para el Reto Dinámico". Guiar a los estudiantes para verificar y organizar los materiales antes de comenzar.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""¡Antes de empezar, ingenieros de la navegación, revisen su equipo! Asegúrense de contar con: - Los Cutebots con sensores ultrasónicos y baterías cargadas. - Sus computadoras o tabletas listos para programar. - magic tablets. - Los materiales para construir y delimitar sus laberintos. - Obstáculos móviles, que pueden ser cajas pequeñas o cualquier material a la mano. ¡Una buena preparación nos dará el impulso necesario!"""</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 11 "Construcción del Laberinto Dinámico". Pedir a los equipos que construyan sus laberintos de 1x1 metros y que ubiquen los obstáculos móviles.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros de la navegación, es hora de crear sus campos de pruebas! Construyan un laberinto de 1x1 metros con los materiales disponibles. ¡Ubiquen obstáculos móviles en los pasillos, pero dejen espacio para que los Cutebots se muevan con seguridad. Recuerden, las trayectorias deben ser desafiantes pero posibles! ¡Dejen volar su creatividad para poner a prueba sus habilidades de programación!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+    <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar Diapositiva 12 "Niveles del Desafío Dinámico" y detallar los objetivos y <span style="color: red; font-weight: bold;">condiciones</span> de cada nivel.</td>
+    <td style="padding: 10px; vertical-align: top;">"""¡Atención, Genios! Aquí tienen los desafíos que pondrán a prueba sus habilidades de programación: <br><br> <strong>Nivel Rookie: 'Luz en el Laberinto'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar el Cutebot para avanzar en línea recta, detenerse frente a una pared y encender sus LEDs. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Construye un laberinto con un camino recto que termine en una pared. Programa al Cutebot para avanzar, detenerse a menos de 10 cm de la pared, encender los LEDs durante 5 segundos y retroceder ligeramente. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> El Cutebot debe detenerse y encender sus LEDs antes de tocar la pared. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Usa bloques ‘si… entonces’, ‘esperar’ y ‘retroceder’. <br><br> <strong>Nivel Master: 'Cambio de Ruta'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar el Cutebot para detectar una pared y elegir una nueva dirección automáticamente. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Construye un laberinto en forma de ‘T’. Programa al Cutebot para avanzar y detectar la pared. Usa un bloque condicional (‘si… entonces, sino’) para elegir la dirección correcta (izquierda o derecha). Los LEDs deben indicar la dirección elegida. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> El Cutebot debe girar hacia el camino libre sin tocar la pared. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Prueba y ajusta el ángulo de giro para movimientos precisos. <br><br> <strong>Nivel Hacker: 'El Desafío del Laberinto Dinámico'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar el Cutebot para navegar por un laberinto con al menos tres giros, esquivando obstáculos móviles. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Construye un laberinto con obstáculos móviles en los pasillos. Programa el Cutebot para avanzar, detenerse ante un obstáculo a menos de 15 cm, esperar que el obstáculo se mueva y reanudar la navegación. Cambia la trayectoria al detectar paredes con giros precisos. Usa LEDs para señalar pausas o giros. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> El Cutebot debe completar el laberinto sin tocar las paredes y esquivar los obstáculos móviles. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Divide el laberinto en pasos, usa bloques de ‘esperar hasta’ y experimenta con las velocidades de giro."""</td>
+</tr>
+
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (20 minutos):</strong> Proyectar Diapositiva 13 "Manos a la Obra: A Programar la Navegación". Explicar que los equipos programarán sus Cutebots con el objetivo de navegar eficientemente en un entorno dinámico.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Manos a la obra, Genios! 🚀 Ahora programen sus Cutebots para navegar por los laberintos dinámicos que crearon. Recuerden que la creatividad y la lógica son sus mejores aliados para resolver cada desafío. ¡Adelante, a conquistar los laberintos!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;"  id="activity-3-step-6">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (5 minutos):</strong> Proyectar Diapositiva 14 "Pruebas y Ajustes Dinámicos". Supervisar mientras los equipos prueban sus programas y ajustan las acciones y la trayectoria de sus Cutebots.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros, es hora de poner a prueba sus creaciones! 🧪 Observen cómo sus Cutebots responden a los desafíos de los laberintos dinámicos. Ajusten el código si es necesario para que esquiven obstáculos, giren con precisión y tomen las decisiones correctas en cada momento. ¡La perseverancia es la clave del éxito!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (3 minutos):</strong> Proyectar Diapositiva 15 "Exhibición de Navegación Dinámica". Invitar a los equipos a mostrar su trabajo y reflexionar sobre sus estrategias y resultados, en un entorno de pruebas simulado.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros de la navegación, es hora de compartir sus resultados! Presenten sus Cutebots en acción y expliquen qué estrategias usaron para que respondan a los desafíos de los laberintos dinámicos. ¡Aprendamos unos de otros y celebremos nuestra creatividad y trabajo en equipo!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 8 (0.5 minutos):</strong> Proyectar Diapositiva 16 "Revisión de Objetivos de Navegación". Reflexionar con los estudiantes sobre lo aprendido y cómo lograron cumplir los objetivos planteados.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""¡Felicidades, Genios de la navegación! 🌟 Hoy lograron cosas increíbles: - Programaron los sensores ultrasónicos para detectar obstáculos fijos y móviles. - Crearon algoritmos para la toma de decisiones en tiempo real. - Dominaron la navegación autónoma en laberintos dinámicos. ¡Han demostrado ser unos verdaderos ingenieros de la programación!"""</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="7">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Análisis colaborativo y optimización de programas con el Team CANVAS.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 17 "Introducción al Team Gnius: Navegación en Equipo". Explicar cómo los roles y la colaboración permitirán revisar y optimizar los programas.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Genios de la navegación, es momento de unir fuerzas como un equipo de ingenieros! 🤝 Usaremos el Team CANVAS para analizar cómo han abordado los desafíos y cómo podemos mejorar nuestras estrategias de navegación autónoma. Cada equipo tendrá roles clave: el Líder guiará la conversación, el Programador ajustará los códigos y el Observador analizará el desempeño. ¡Juntos lograremos que nuestros Cutebots dominen los laberintos dinámicos!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar la Diapositiva 18 "Formación de Equipos de Navegación Dinámica". Los estudiantes tendrán 1 minuto para formar equipos de 3 y asignar roles: Líder, Programador y Observador.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""¡Tienen 1 minuto para formar sus equipos de 3, navegantes! Recuerden: - El Líder dirigirá la discusión y se asegurará de que todos participen. - El Programador ajustará el código basándose en las ideas del equipo. - El Observador analizará el rendimiento y propondrá mejoras para la navegación autónoma. ¡Vamos, a colaborar como un verdadero equipo de ingenieros de la robótica!"""</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar la Diapositiva 19 "Team CANVAS: Estrategias de Navegación Dinámica". Cada equipo debe: 1. Analizar el trabajo realizado. 2. Proponer mejoras según los roles asignados. 3. Diseñar un plan conjunto para optimizar la navegación del Cutebot.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""Usen el Team CANVAS para reflexionar sobre su trabajo de navegación autónoma, Genios. Pregúntense: - ¿Qué hicimos bien al programar la detección de obstáculos y los giros? - ¿Qué podemos mejorar en la respuesta a los obstáculos móviles? - ¿Cómo podemos hacer que la trayectoria de nuestro Cutebot sea más eficiente en el laberinto dinámico? ¡Compartan ideas y trabajen juntos para mejorar sus estrategias de navegación!"""</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (3 minutos):</strong> Proyectar la Diapositiva 20 "Ajustes en la Navegación Autónoma". Los equipos trabajan en las siguientes tareas: Líder organiza, Programador ajusta códigos, Observador verifica el desempeño en el circuito.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros de la navegación, es momento de aplicar las mejoras en los laberintos! Programadores, ajusten los códigos basándose en las recomendaciones de su equipo. Líderes, asegúrense de que todos estén colaborando. Observadores, verifiquen la respuesta del Cutebot a los obstáculos y las paredes. ¡Trabajen juntos para hacer que la navegación sea más precisa y eficiente!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="3.5">
+            <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor de Lab ⏰ Tiempo: 3.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Reflexión final y organización del espacio de trabajo para cerrar con respeto y orden.
+                </div>
+            </div>
+            <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar la Diapositiva 21 "Revisión de Objetivos: Navegación Autónoma". Leer los objetivos planteados al inicio y reflexionar sobre lo aprendido y logrado en equipo.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""¡Genios de la navegación autónoma, es momento de celebrar sus logros! 🌟 Revisemos nuestros objetivos: - ¿Programamos el sensor ultrasónico para detectar obstáculos fijos y móviles? - ¿Diseñamos algoritmos para que los Cutebots tomaran decisiones de dirección? - ¿Creamos trayectorias complejas para esquivar los desafíos de los laberintos dinámicos? ¡Estoy muy orgulloso del trabajo que realizaron hoy y de su ingenio!"""</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (3 minutos):</strong> Proyectar la Diapositiva 22 "Organización del Espacio de Navegación Autónoma". Guiar a los estudiantes para recoger y organizar todos los materiales utilizados durante la misión.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""Ahora, como profesionales de la robótica, honremos nuestro espacio de trabajo. Cada equipo es responsable de recoger y organizar todos los materiales utilizados durante esta misión: - Guarden sus Cutebots y Micro:bits con cuidado. - Asegúrense de que los materiales de los laberintos y los obstáculos estén en su lugar. - Limpien sus áreas de trabajo y déjenlas listas para futuras exploraciones. ¡Recuerden que el orden nos impulsa a seguir creando con entusiasmo!"""</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
